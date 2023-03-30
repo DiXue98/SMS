@@ -1,0 +1,20 @@
+env: hallway
+
+env_args:
+  key: simple
+  n_agents: 4
+  n_groups: 1
+  state_numbers: [2, 2, 3, 3]
+  group_ids: [0, 0, 0, 0]
+  reward_win: 1
+  obs_last_action: False
+  state_last_action: False
+
+learner_log_interval: 10000
+log_interval: 10000
+runner_log_interval: 10000
+t_max: 2005000
+test_interval: 10000
+test_nepisode: 300
+test_greedy: True
+obs_last_action: False

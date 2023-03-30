@@ -1,0 +1,59 @@
+# --- SMS specific parameters ---
+
+# use epsilon greedy action selector
+action_selector: "gumbel"
+epsilon_start: .0
+epsilon_finish: .0
+epsilon_anneal_time: 100000
+mask_before_softmax: True
+
+mac: 'sms_mac'
+
+runner: "parallel"
+batch_size_run: 8
+buffer_size: 128
+batch_size: 32
+
+off_buffer_size: 5000
+off_batch_size: 64
+run: "on_off"
+
+t_max: 2005000
+
+# update the target network every {} episodes
+target_update_interval: 200
+
+# use the Q_Learner to train
+agent_output_type: "pi_logits"
+
+learner: "sms_learner"
+mixer: "dop"
+mixing_embed_dim: 32
+hypernet_embed: 64
+critic_hidden_dim: 128
+
+lr: 0.001 # Learning rate for agents
+critic_lr: 0.001
+lambd: 0.6
+entropy_coef: 0.03
+optimizer: 'adam'
+abs: True # monotonicity condition
+
+agent: "sms"
+msg_hidden_dim: 32
+msg_dim: 8 # paired with agent: all
+message_dropout: True
+dropout_rate: 0.5
+use_rnn: False
+
+# message selector specific parameters
+enable_msg_selector: True
+selector_hidden_dim: 32
+sample_size: 2
+msg_lr: 0.0001
+msg_n_epochs: 1
+
+#start_msg_select_timestep: 200000 # listener-speaker
+start_msg_select_timestep: 300000 # hallway
+
+name: "sms"

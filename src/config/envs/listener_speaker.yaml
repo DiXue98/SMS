@@ -1,0 +1,17 @@
+env: "listener_speaker"
+
+env_args:
+  key: null
+  time_limit: 100
+  pretrained_wrapper: null
+
+test_greedy: False
+test_nepisode: 100
+test_interval: 10000
+log_interval: 10000
+runner_log_interval: 10000
+learner_log_interval: 10000
+t_max: 2050000
+obs_last_action: False
+obs_agent_id: False
+msg_dim: 2
